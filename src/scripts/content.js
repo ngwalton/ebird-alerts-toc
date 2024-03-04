@@ -28,8 +28,7 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   const a = document.createElement('a');
   const spanCom = document.createElement('span');
   const spanSci = document.createElement('span');
-  const space = document.createTextNode(' ');
-  const count = document.createTextNode(` (${data.count})`);
+  const count = document.createElement('span');
 
   li.dataset.sid = alpha6;
 
@@ -37,11 +36,14 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   spanSci.classList.add('sci', 'Heading-sub', 'Heading-sub--sci');
   li.classList.add('Heading', 'Heading--h5');
 
+  spanSci.style.marginLeft = 0;
+  count.style.marginLeft = '0.5rem';
+
   a.setAttribute('href', `#${data.id}`);
   spanCom.textContent = data.com;
   spanSci.textContent = data.sci;
+  count.textContent = `(${data.count})`;
   a.appendChild(spanCom);
-  a.appendChild(space);
   a.appendChild(spanSci);
   li.appendChild(a);
   li.appendChild(count);

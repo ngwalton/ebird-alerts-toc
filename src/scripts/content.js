@@ -2,6 +2,17 @@ const observations = document.querySelectorAll('.Observation');
 
 const toc = {};
 
+const div = document.createElement('div');
+div.id = 'alerts-toc-sidenav';
+
+const ol = document.createElement('ol');
+ol.id = 'alerts-toc-ol';
+
+const button = document.createElement('button');
+button.innerText = 'Show table of contents';
+button.classList.add('Button', 'Button--large', 'Button--highlight');
+button.style.marginBottom = 0;
+
 observations.forEach((obs) => {
   const { id } = obs;
   const com = obs.querySelector('.Heading-main').textContent;
@@ -20,8 +31,6 @@ observations.forEach((obs) => {
 
   toc[alpha6].count += 1;
 });
-
-const ol = document.createElement('ol');
 
 Object.entries(toc).forEach(([alpha6, data]) => {
   const li = document.createElement('li');
@@ -43,14 +52,27 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   spanCom.textContent = data.com;
   spanSci.textContent = data.sci;
   count.textContent = `(${data.count})`;
+
   a.appendChild(spanCom);
   a.appendChild(spanSci);
+
   li.appendChild(a);
   li.appendChild(count);
 
   ol.appendChild(li);
 });
 
-const content = document.querySelector('#content');
+div.appendChild(ol);
 
-content.insertBefore(ol, content.children[0]);
+button.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const main = document.querySelector('.Page.Page--elevation');
+  const tocIsClosed = ['', '100%'].includes(div.style.right);
+
+  div.style.right = tocIsClosed ? '75%' : '';
+  main.style.marginLeft = tocIsClosed ? '25%' : '';
+});
+
+document.querySelector('body').prepend(div);
+document.querySelector('.GridFlex-cell.u-md-size2of3').appendChild(button);

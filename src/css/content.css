@@ -1,0 +1,22 @@
+#alerts-toc-sidenav {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: right 0.5s;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+}
+
+.Page.Page--elevation {
+  transition: margin-left 0.5s;
+}
+
+ol#alerts-toc-ol {
+  margin: 0;
+}

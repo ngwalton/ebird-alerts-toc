@@ -14,7 +14,10 @@
 }
 
 .Page.Page--elevation {
-  transition: margin-left 0.5s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: left 0.5s;
 }
 
 #alerts-toc-button {

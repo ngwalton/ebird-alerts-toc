@@ -71,7 +71,7 @@ button.addEventListener('click', (event) => {
   const tocIsClosed = ['', '100%'].includes(div.style.right);
 
   div.style.right = tocIsClosed ? '75%' : '';
-  main.style.marginLeft = tocIsClosed ? '25%' : '';
+  main.style.left = tocIsClosed ? '25%' : '';
   button.style.left = tocIsClosed ? '25%' : '';
 });
 

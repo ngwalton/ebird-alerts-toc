@@ -15,7 +15,7 @@ ol.id = mkID`ol`;
 button.id = mkID`button`;
 buttonIconSpan.id = mkID`button-icon`;
 
-buttonTextSpan.textContent = 'Show table of contents';
+buttonTextSpan.textContent = 'Table of Contents';
 buttonIconSpan.innerHTML =
   '<svg class="Icon Icon--triangleDown" role="img">' +
   '<use xlink:href="#Icon--triangleDown"></use>' +

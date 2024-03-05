@@ -19,6 +19,12 @@
 
 #alerts-toc-button {
   margin-bottom: 0;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  transition: left 0.5s;
 }
 
 span.alerts-toc-sci {

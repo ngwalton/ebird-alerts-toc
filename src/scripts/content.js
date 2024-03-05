@@ -72,7 +72,8 @@ button.addEventListener('click', (event) => {
 
   div.style.right = tocIsClosed ? '75%' : '';
   main.style.marginLeft = tocIsClosed ? '25%' : '';
+  button.style.left = tocIsClosed ? '25%' : '';
 });
 
 document.querySelector('body').prepend(div);
-document.querySelector('.GridFlex-cell.u-md-size2of3').appendChild(button);
+document.querySelector('body').appendChild(button);

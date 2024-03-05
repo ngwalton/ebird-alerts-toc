@@ -22,7 +22,7 @@
   margin-bottom: 0;
   position: fixed;
   top: 50%;
-  left: 0;
+  left: 2px;
   transform: rotate(-90deg);
   transform-origin: left top;
 }

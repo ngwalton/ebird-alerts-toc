@@ -83,7 +83,7 @@ button.addEventListener('click', (event) => {
 
   div.style.right = tocIsClosed ? '75%' : '';
   main.style.left = tocIsClosed ? '25%' : '';
-  button.style.left = tocIsClosed ? '25%' : '';
+  button.style.left = tocIsClosed ? 'calc(25% + 2px)' : '';
   buttonIconSpan.querySelector('svg').style.transform = tocIsClosed
     ? 'rotate(180deg)'
     : '';

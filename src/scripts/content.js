@@ -51,7 +51,7 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   a.setAttribute('href', `#${data.id}`);
   spanCom.textContent = data.com;
   spanSci.textContent = data.sci;
-  count.textContent = `(${data.count})`;
+  count.textContent = data.count;
 
   a.appendChild(spanCom);
   a.appendChild(spanSci);

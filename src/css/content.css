@@ -8,7 +8,6 @@
   background-color: #fff;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: right 0.5s;
   padding: 1rem;
   border-right: 1px solid #ccc;
 }
@@ -17,7 +16,6 @@
   position: absolute;
   left: 0;
   right: 0;
-  transition: left 0.5s;
 }
 
 #alerts-toc-button {
@@ -27,7 +25,6 @@
   left: 0;
   transform: rotate(-90deg);
   transform-origin: left top;
-  transition: left 0.5s;
 }
 
 span.alerts-toc-sci {

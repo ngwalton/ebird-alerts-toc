@@ -17,6 +17,19 @@
   transition: margin-left 0.5s;
 }
 
+#alerts-toc-button {
+  margin-bottom: 0;
+}
+
+span.alerts-toc-sci {
+  margin-left: 0;
+  flex: 0 1 auto;
+}
+
+.alerts-toc-count {
+  margin-left: 0.5rem;
+}
+
 ol#alerts-toc-ol {
   margin: 0;
 }

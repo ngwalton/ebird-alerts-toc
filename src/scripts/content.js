@@ -11,7 +11,7 @@ ol.id = 'alerts-toc-ol';
 const button = document.createElement('button');
 button.innerText = 'Show table of contents';
 button.classList.add('Button', 'Button--large', 'Button--highlight');
-button.style.marginBottom = 0;
+button.id = 'alerts-toc-button';
 
 observations.forEach((obs) => {
   const { id } = obs;
@@ -41,12 +41,10 @@ Object.entries(toc).forEach(([alpha6, data]) => {
 
   li.dataset.sid = alpha6;
 
-  spanCom.classList.add('common', 'Heading-main');
-  spanSci.classList.add('sci', 'Heading-sub', 'Heading-sub--sci');
+  spanCom.classList.add('alerts-toc-com', 'Heading-main');
+  spanSci.classList.add('alerts-toc-sci', 'Heading-sub', 'Heading-sub--sci');
   li.classList.add('Heading', 'Heading--h5');
-
-  spanSci.style.marginLeft = 0;
-  count.style.marginLeft = '0.5rem';
+  count.classList.add('alerts-toc-count');
 
   a.setAttribute('href', `#${data.id}`);
   spanCom.textContent = data.com;

@@ -3,15 +3,15 @@ const observations = document.querySelectorAll('.Observation');
 const toc = {};
 
 const div = document.createElement('div');
-div.id = 'alerts-toc-sidenav';
-
 const ol = document.createElement('ol');
-ol.id = 'alerts-toc-ol';
-
 const button = document.createElement('button');
+
+div.id = 'alerts-toc-sidenav';
+ol.id = 'alerts-toc-ol';
+button.id = 'alerts-toc-button';
+
 button.innerText = 'Show table of contents';
 button.classList.add('Button', 'Button--large', 'Button--highlight');
-button.id = 'alerts-toc-button';
 
 observations.forEach((obs) => {
   const { id } = obs;

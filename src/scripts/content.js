@@ -6,9 +6,11 @@ const div = document.createElement('div');
 const ol = document.createElement('ol');
 const button = document.createElement('button');
 
-div.id = 'alerts-toc-sidenav';
-ol.id = 'alerts-toc-ol';
-button.id = 'alerts-toc-button';
+const mkID = (suffix) => `alerts-toc-${suffix}`;
+
+div.id = mkID`sidenav`;
+ol.id = mkID`ol`;
+button.id = mkID`button`;
 
 button.innerText = 'Show table of contents';
 button.classList.add('Button', 'Button--large', 'Button--highlight');
@@ -41,10 +43,10 @@ Object.entries(toc).forEach(([alpha6, data]) => {
 
   li.dataset.sid = alpha6;
 
-  spanCom.classList.add('alerts-toc-com', 'Heading-main');
-  spanSci.classList.add('alerts-toc-sci', 'Heading-sub', 'Heading-sub--sci');
+  spanCom.classList.add(mkID`com`, 'Heading-main');
+  spanSci.classList.add(mkID`sci`, 'Heading-sub', 'Heading-sub--sci');
   li.classList.add('Heading', 'Heading--h5');
-  count.classList.add('alerts-toc-count');
+  count.classList.add(mkID`count`);
 
   a.setAttribute('href', `#${data.id}`);
   spanCom.textContent = data.com;

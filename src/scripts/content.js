@@ -24,7 +24,7 @@ buttonIconSpan.innerHTML =
 button.appendChild(buttonTextSpan);
 button.appendChild(buttonIconSpan);
 
-button.classList.add('Button', 'Button--large', 'Button--highlight');
+button.classList.add('Button', 'Button--large');
 
 observations.forEach((obs) => {
   const { id } = obs;

@@ -23,8 +23,8 @@
   position: fixed;
   top: 50%;
   left: 2px;
-  transform: rotate(-90deg);
   transform-origin: left top;
+  transform: rotate(-90deg) translateX(-50%);
 }
 
 span.alerts-toc-sci {

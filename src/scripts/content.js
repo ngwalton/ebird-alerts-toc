@@ -5,14 +5,25 @@ const toc = {};
 const div = document.createElement('div');
 const ol = document.createElement('ol');
 const button = document.createElement('button');
+const buttonTextSpan = document.createElement('span');
+const buttonIconSpan = document.createElement('span');
 
 const mkID = (suffix) => `alerts-toc-${suffix}`;
 
 div.id = mkID`sidenav`;
 ol.id = mkID`ol`;
 button.id = mkID`button`;
+buttonIconSpan.id = mkID`button-icon`;
 
-button.innerText = 'Show table of contents';
+buttonTextSpan.textContent = 'Show table of contents';
+buttonIconSpan.innerHTML =
+  '<svg class="Icon Icon--triangleDown" role="img">' +
+  '<use xlink:href="#Icon--triangleDown"></use>' +
+  '</svg>';
+
+button.appendChild(buttonTextSpan);
+button.appendChild(buttonIconSpan);
+
 button.classList.add('Button', 'Button--large', 'Button--highlight');
 
 observations.forEach((obs) => {
@@ -73,6 +84,9 @@ button.addEventListener('click', (event) => {
   div.style.right = tocIsClosed ? '75%' : '';
   main.style.left = tocIsClosed ? '25%' : '';
   button.style.left = tocIsClosed ? '25%' : '';
+  buttonIconSpan.querySelector('svg').style.transform = tocIsClosed
+    ? 'rotate(180deg)'
+    : '';
 });
 
 document.querySelector('body').prepend(div);

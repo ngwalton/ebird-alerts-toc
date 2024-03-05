@@ -30,3 +30,8 @@ span.alerts-toc-sci {
 ol#alerts-toc-ol {
   margin: 0;
 }
+
+ol#alerts-toc-ol li {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}

@@ -23,11 +23,8 @@
 
 span.alerts-toc-sci {
   margin-left: 0;
+  margin-right: 0.5rem;
   flex: 0 1 auto;
-}
-
-.alerts-toc-count {
-  margin-left: 0.5rem;
 }
 
 ol#alerts-toc-ol {

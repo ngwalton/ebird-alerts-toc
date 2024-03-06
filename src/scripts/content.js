@@ -21,8 +21,7 @@ buttonIconSpan.innerHTML =
   '<use xlink:href="#Icon--triangleDown"></use>' +
   '</svg>';
 
-button.appendChild(buttonTextSpan);
-button.appendChild(buttonIconSpan);
+button.append(buttonTextSpan, buttonIconSpan);
 
 button.classList.add('Button', 'Button--large');
 
@@ -64,16 +63,14 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   spanSci.textContent = data.sci;
   count.textContent = data.count;
 
-  a.appendChild(spanCom);
-  a.appendChild(spanSci);
+  a.append(spanCom, spanSci);
 
-  li.appendChild(a);
-  li.appendChild(count);
+  li.append(a, count);
 
-  ol.appendChild(li);
+  ol.append(li);
 });
 
-div.appendChild(ol);
+div.append(ol);
 
 button.addEventListener('click', (event) => {
   event.preventDefault();
@@ -89,4 +86,4 @@ button.addEventListener('click', (event) => {
 });
 
 document.querySelector('body').prepend(div);
-document.querySelector('body').appendChild(button);
+document.querySelector('body').append(button);

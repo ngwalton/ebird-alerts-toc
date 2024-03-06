@@ -79,14 +79,13 @@ button.addEventListener('click', (event) => {
   event.preventDefault();
 
   const main = document.querySelector('.Page.Page--elevation');
+  const svg = buttonIconSpan.querySelector('svg');
   const tocIsClosed = ['', '100%'].includes(div.style.right);
 
   div.style.right = tocIsClosed ? '75%' : '';
   main.style.left = tocIsClosed ? '25%' : '';
   button.style.left = tocIsClosed ? 'calc(25% + 2px)' : '';
-  buttonIconSpan.querySelector('svg').style.transform = tocIsClosed
-    ? 'rotate(180deg)'
-    : '';
+  svg.style.transform = tocIsClosed ? 'rotate(180deg)' : '';
 });
 
 document.querySelector('body').prepend(div);

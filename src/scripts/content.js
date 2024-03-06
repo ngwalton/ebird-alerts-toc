@@ -10,6 +10,19 @@ const buttonIconSpan = document.createElement('span');
 
 const mkID = (suffix) => `alerts-toc-${suffix}`;
 
+function scrollToObs(click) {
+  click.preventDefault();
+  const id = click.currentTarget.getAttribute('href');
+
+  document.querySelector(id).scrollIntoView({
+    scrollIntoViewOptions: {
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    },
+  });
+}
+
 div.id = mkID`sidenav`;
 ol.id = mkID`ol`;
 button.id = mkID`button`;
@@ -62,6 +75,8 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   spanCom.textContent = data.com;
   spanSci.textContent = data.sci;
   count.textContent = data.count;
+
+  a.addEventListener('click', scrollToObs);
 
   a.append(spanCom, spanSci);
 

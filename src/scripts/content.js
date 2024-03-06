@@ -85,5 +85,4 @@ button.addEventListener('click', (event) => {
   svg.style.transform = tocIsClosed ? 'rotate(180deg)' : '';
 });
 
-document.querySelector('body').prepend(div);
-document.querySelector('body').append(button);
+document.querySelector('body').append(div, button);

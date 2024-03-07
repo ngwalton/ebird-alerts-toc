@@ -63,3 +63,10 @@ ol#alerts-toc-ol #alerts-toc-header {
     width: var(--max-toc-size);
   }
 }
+
+@media (max-width: 600px) {
+  .alerts-toc-count,
+  ol#alerts-toc-ol #alerts-toc-header {
+    display: none;
+  }
+}

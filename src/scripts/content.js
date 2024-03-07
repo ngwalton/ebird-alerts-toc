@@ -1,5 +1,6 @@
 const observations = document.querySelectorAll('.Observation');
 
+const tocWidthPct = 25;
 const toc = {};
 
 const div = document.createElement('div');
@@ -90,9 +91,9 @@ button.addEventListener('click', (event) => {
   const svg = buttonIconSpan.querySelector('svg');
   const tocIsClosed = ['', '100%'].includes(div.style.right);
 
-  div.style.right = tocIsClosed ? '75%' : '';
-  main.style.left = tocIsClosed ? '25%' : '';
-  button.style.left = tocIsClosed ? 'calc(25% + 2px)' : '';
+  div.style.right = tocIsClosed ? `${100 - tocWidthPct}%` : '';
+  main.style.left = tocIsClosed ? `${tocWidthPct}%` : '';
+  button.style.left = tocIsClosed ? `calc(${tocWidthPct}% + 2px)` : '';
   svg.style.transform = tocIsClosed ? 'rotate(180deg)' : '';
 });
 

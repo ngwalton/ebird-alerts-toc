@@ -46,7 +46,6 @@ observations.forEach((obs) => {
       id: obs.id,
       com: obs.querySelector('.Heading-main').textContent,
       sci: obs.querySelector('.Heading-sub--sci').textContent,
-      alpha6,
       count: 0,
     };
   }
@@ -54,14 +53,12 @@ observations.forEach((obs) => {
   toc[alpha6].count += 1;
 });
 
-Object.entries(toc).forEach(([alpha6, data]) => {
+Object.values(toc).forEach((data) => {
   const li = document.createElement('li');
   const a = document.createElement('a');
   const spanCom = document.createElement('span');
   const spanSci = document.createElement('span');
   const count = document.createElement('span');
-
-  li.dataset.sid = alpha6;
 
   spanCom.classList.add(mkID`com`, 'Heading-main');
   spanSci.classList.add(mkID`sci`, 'Heading-sub', 'Heading-sub--sci');

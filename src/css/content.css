@@ -1,6 +1,11 @@
+:root {
+  --min-toc-size: 25%;
+  --max-toc-size: 30%;
+}
+
 #alerts-toc-sidenav {
   height: 100%;
-  width: 25%;
+  width: var(--min-toc-size);
   position: fixed;
   z-index: 1;
   top: 0;
@@ -53,4 +58,10 @@ ol#alerts-toc-ol li:nth-child(2n + 3) {
 ol#alerts-toc-ol #alerts-toc-header {
   margin-bottom: 0.75rem;
   border-bottom: 1px solid #d6d6d6;
+}
+
+@media (min-width: 904px) {
+  #alerts-toc-sidenav {
+    width: var(--max-toc-size);
+  }
 }

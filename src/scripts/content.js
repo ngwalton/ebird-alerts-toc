@@ -1,6 +1,9 @@
+const minTocWidthPct = 25;
+const maxTocWidthPct = 30;
+const mediaBreakPt = '(min-width: 904px)';
+
 const observations = document.querySelectorAll('.Observation');
 
-const tocWidthPct = 25;
 const toc = {};
 
 const div = document.createElement('div');
@@ -11,6 +14,19 @@ const buttonTextSpan = document.createElement('span');
 const buttonIconSpan = document.createElement('span');
 
 const mkID = (suffix) => `alerts-toc-${suffix}`;
+
+function getTocWidthPct() {
+  const largeScreen = window.matchMedia(mediaBreakPt).matches;
+  return largeScreen ? maxTocWidthPct : minTocWidthPct;
+}
+
+function tocIsClosed() {
+  return ['', '100%'].includes(div.style.right);
+}
+
+function getMainContent() {
+  return document.querySelector('.Page.Page--elevation');
+}
 
 function scrollToObs(click) {
   click.preventDefault();
@@ -87,14 +103,26 @@ div.append(ol);
 button.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const main = document.querySelector('.Page.Page--elevation');
+  const tocWidthPct = getTocWidthPct();
+  const main = getMainContent();
   const svg = buttonIconSpan.querySelector('svg');
-  const tocIsClosed = ['', '100%'].includes(div.style.right);
+  const closed = tocIsClosed();
 
-  div.style.right = tocIsClosed ? `${100 - tocWidthPct}%` : '';
-  main.style.left = tocIsClosed ? `${tocWidthPct}%` : '';
-  button.style.left = tocIsClosed ? `calc(${tocWidthPct}% + 2px)` : '';
-  svg.style.transform = tocIsClosed ? 'rotate(180deg)' : '';
+  div.style.right = closed ? `${100 - tocWidthPct}%` : '';
+  main.style.left = closed ? `${tocWidthPct}%` : '';
+  button.style.left = closed ? `calc(${tocWidthPct}% + 2px)` : '';
+  svg.style.transform = closed ? 'rotate(180deg)' : '';
+});
+
+window.addEventListener('resize', () => {
+  const tocWidthPct = getTocWidthPct();
+  const main = getMainContent();
+
+  if (!tocIsClosed()) {
+    div.style.right = `${100 - tocWidthPct}%`;
+    main.style.left = `${tocWidthPct}%`;
+    button.style.left = `calc(${tocWidthPct}% + 2px)`;
+  }
 });
 
 document.querySelector('body').append(div, button);

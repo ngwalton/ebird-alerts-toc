@@ -21,5 +21,5 @@ _eBird alerts TOC_ should now be installed. Navigate to
 you view any alerts page you will see a button on the left labeled
 _Table of Contents_. Click the button to open/close the table of contents.
 
-This extension is in early development. It will eventually be available on the
-Chrome Web Store and be adapted for Firefox.
+This extension is in development, but is functional. It will eventually be
+available on the Chrome Web Store and be adapted for Firefox.

@@ -74,11 +74,8 @@ Object.entries(toc).forEach(([alpha6, data]) => {
   count.textContent = data.count;
 
   a.addEventListener('click', scrollToObs);
-
   a.append(spanCom, spanSci);
-
   li.append(a, count);
-
   ol.append(li);
 });
 

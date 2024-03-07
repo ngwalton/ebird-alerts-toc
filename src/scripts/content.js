@@ -4,6 +4,7 @@ const toc = {};
 
 const div = document.createElement('div');
 const ol = document.createElement('ol');
+const liHeader = document.createElement('li');
 const button = document.createElement('button');
 const buttonTextSpan = document.createElement('span');
 const buttonIconSpan = document.createElement('span');
@@ -25,18 +26,22 @@ function scrollToObs(click) {
 
 div.id = mkID`sidenav`;
 ol.id = mkID`ol`;
+liHeader.id = mkID`header`;
 button.id = mkID`button`;
 buttonIconSpan.id = mkID`button-icon`;
 
+liHeader.innerHTML = '<span>Species</span><span>#Obs</span>';
 buttonTextSpan.textContent = 'Table of Contents';
 buttonIconSpan.innerHTML =
   '<svg class="Icon Icon--triangleDown" role="img">' +
   '<use xlink:href="#Icon--triangleDown"></use>' +
   '</svg>';
 
-button.append(buttonTextSpan, buttonIconSpan);
-
+liHeader.classList.add('Heading', 'Heading--h4');
 button.classList.add('Button', 'Button--large');
+
+ol.append(liHeader);
+button.append(buttonTextSpan, buttonIconSpan);
 
 observations.forEach((obs) => {
   const alpha6 = obs.querySelector('a[data-species-code]').dataset.speciesCode;

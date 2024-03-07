@@ -43,3 +43,9 @@ ol#alerts-toc-ol li {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
+
+#alerts-toc-header {
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #d6d6d6;
+}

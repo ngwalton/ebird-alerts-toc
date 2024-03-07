@@ -39,16 +39,13 @@ button.append(buttonTextSpan, buttonIconSpan);
 button.classList.add('Button', 'Button--large');
 
 observations.forEach((obs) => {
-  const { id } = obs;
-  const com = obs.querySelector('.Heading-main').textContent;
-  const sci = obs.querySelector('.Heading-sub--sci').textContent;
   const alpha6 = obs.querySelector('a[data-species-code]').dataset.speciesCode;
 
   if (!toc[alpha6]) {
     toc[alpha6] = {
-      id,
-      com,
-      sci,
+      id: obs.id,
+      com: obs.querySelector('.Heading-main').textContent,
+      sci: obs.querySelector('.Heading-sub--sci').textContent,
       alpha6,
       count: 0,
     };

@@ -75,7 +75,7 @@ observations.forEach((obs) => {
   toc[alpha6].count += 1;
 });
 
-Object.values(toc).forEach((data) => {
+Object.values(toc).forEach((entry) => {
   const li = document.createElement('li');
   const a = document.createElement('a');
   const spanCom = document.createElement('span');
@@ -87,10 +87,10 @@ Object.values(toc).forEach((data) => {
   li.classList.add('Heading', 'Heading--h5');
   count.classList.add(mkID`count`);
 
-  a.setAttribute('href', `#${data.id}`);
-  spanCom.textContent = data.com;
-  spanSci.textContent = data.sci;
-  count.textContent = data.count;
+  a.setAttribute('href', `#${entry.id}`);
+  spanCom.textContent = entry.com;
+  spanSci.textContent = entry.sci;
+  count.textContent = entry.count;
 
   a.addEventListener('click', scrollToObs);
   a.append(spanCom, spanSci);

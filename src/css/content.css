@@ -21,6 +21,7 @@
 
 #alerts-toc-button {
   margin-bottom: 0;
+  padding-block: 0.5rem;
   position: fixed;
   top: 50%;
   left: 2px;
